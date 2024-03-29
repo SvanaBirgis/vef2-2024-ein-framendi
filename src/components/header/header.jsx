@@ -40,24 +40,28 @@ export default function Header() {
 
     return (
         <div className={styles.header}>
-            <div>
-                <Link href='/'>Heim</Link>
-                <Link href='/news'>Fréttir</Link>
-                <Dropdown>
-                    <DropdownTrigger>
-                        
+                <div className={styles.homeContainer}>
+                    <Link href='/'>Heim</Link>
+                </div>
+                <div className={styles.newsContainer}>
+                    <Link href='/news'>Fréttir</Link>
+                </div>
+                <div className={styles.leaguesContainer}>
+                    <Dropdown>
+                        <DropdownTrigger>
+
                             Deildir
-                    
-                    </DropdownTrigger>
-                    <DropdownMenu aria-label="Action event example"
-                        onAction={(key) => router.push(`/news/leagues/${key}`)}
-                    >
-                        {data?.length > 0 && data.map((league) => (
-                            <DropdownItem key={league.id}>{league.name}</DropdownItem>
-                        ))}
-                    </DropdownMenu>
-                </Dropdown>
-            </div>
+
+                        </DropdownTrigger>
+                        <DropdownMenu aria-label="Action event example"
+                            onAction={(key) => router.push(`/news/leagues/${key}`)}
+                        >
+                            {data?.length > 0 && data.map((league) => (
+                                <DropdownItem key={league.id}>{league.name}</DropdownItem>
+                            ))}
+                        </DropdownMenu>
+                    </Dropdown>
+                </div>
         </div>
     );
 }

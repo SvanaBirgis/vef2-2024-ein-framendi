@@ -18,7 +18,6 @@ export default async function SingleNews({params}){
     const article = await getSingleNews(params.id);
     return(
         <div className={styles.container}>
-            <h1 className={styles.title}> Frétt </h1>
             <div className={styles.newsContainer}>
                 
                     <Article article = {article} 
